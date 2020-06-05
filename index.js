@@ -12,7 +12,7 @@ const keystone = new Keystone({
 
 //const { Content } = require('@keystonejs/field-content');
 //TODO Change path to your package directory
-const { Content } = require('~/Documents/Web-project/keystone/packages/field-content');
+const { Content } = require('/Users/Z/Documents/Web-project/keystone/packages/field-content');
 
 
 keystone.createList('foo', {
