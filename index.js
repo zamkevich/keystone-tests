@@ -11,8 +11,8 @@ const keystone = new Keystone({
 
 
 //const { Content } = require('@keystonejs/field-content');
-const { Content } = require('/Users/Z/Documents/Web-project/keystone/packages/field-content');
-
+//TODO Change path to your package directory
+const { Content } = require('~/Documents/Web-project/keystone/packages/field-content');
 
 
 keystone.createList('foo', {
@@ -21,13 +21,7 @@ keystone.createList('foo', {
       type: Relationship,
       ref: 'bar.ref'
     },
-    text: {
-      type: Content,
-      blocks: [
-        Content.blocks.link,
-      ],
-    },
-
+    text: { type: Content },
   }
 });
 keystone.createList('bar', {
@@ -36,13 +30,7 @@ keystone.createList('bar', {
       type: Relationship,
       ref: 'foo.ref'
     },
-    text: {
-      type: Content,
-      blocks: [
-        Content.blocks.link,
-      ],
-    },
-
+    text: { type: Content },
   }
 });
 
