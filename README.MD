@@ -1,3 +1,5 @@
 ## For tests
-1. Checkout to tests brunch. 
-2. Read brunch readme. 
+1. Download the repository
+2. Extract & open
+3. Checkout to tests brunch 
+4. Read brunch readme
