@@ -2,17 +2,12 @@ const { Keystone } = require('@keystonejs/keystone');
 const { GraphQLApp } = require('@keystonejs/app-graphql');
 const { AdminUIApp } = require('@keystonejs/app-admin-ui');
 const { MongooseAdapter } = require('@keystonejs/adapter-mongoose');
-const { Relationship } = require('@keystonejs/fields');
+const { Text, Relationship } = require('@keystonejs/fields');
 
 const keystone = new Keystone({
-  name: 'test_content',
+  name: 'test_relationship_flow',
   adapter: new MongooseAdapter(),
 });
-
-
-//const { Content } = require('@keystonejs/field-content');
-//TODO Change path to your package directory
-const { Content } = require('/Users/Z/Documents/Web-project/keystone/packages/field-content');
 
 
 keystone.createList('foo', {
@@ -21,7 +16,7 @@ keystone.createList('foo', {
       type: Relationship,
       ref: 'bar.ref'
     },
-    text: { type: Content },
+    text: { type: Text },
   }
 });
 keystone.createList('bar', {
@@ -30,7 +25,7 @@ keystone.createList('bar', {
       type: Relationship,
       ref: 'foo.ref'
     },
-    text: { type: Content },
+    text: { type: Text },
   }
 });
 
