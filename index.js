@@ -5,7 +5,7 @@ const { MongooseAdapter } = require('@keystonejs/adapter-mongoose');
 const { Text, Relationship } = require('@keystonejs/fields');
 
 const keystone = new Keystone({
-  name: 'test_relationship_flow',
+  name: 'test_relationship_flow_work',
   adapter: new MongooseAdapter(),
 });
 
