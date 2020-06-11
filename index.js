@@ -10,20 +10,46 @@ const keystone = new Keystone({
 });
 
 
-keystone.createList('foo', {
+keystone.createList('L_1', {
   fields: {
     ref: {
       type: Relationship,
-      ref: 'bar.ref'
+      ref: 'L_2.ref'
     },
     text: { type: Text },
   }
 });
-keystone.createList('bar', {
+keystone.createList('L_2', {
   fields: {    
     ref: {
       type: Relationship,
-      ref: 'foo.ref'
+      ref: 'L_1.ref'
+    },    
+    ref_2: {
+      type: Relationship,
+      ref: 'L_3.ref'
+    },
+    text: { type: Text },
+  }
+});
+keystone.createList('L_3', {
+  fields: {    
+    ref: {
+      type: Relationship,
+      ref: 'L_2.ref_2'
+    },    
+    ref_2: {
+      type: Relationship,
+      ref: 'L_4.ref'
+    },
+    text: { type: Text },
+  }
+});
+keystone.createList('L_4', {
+  fields: {    
+    ref: {
+      type: Relationship,
+      ref: 'L_3.ref_2'
     },
     text: { type: Text },
   }
